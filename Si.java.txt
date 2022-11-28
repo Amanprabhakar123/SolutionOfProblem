@@ -1,0 +1,31 @@
+package solution;
+
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
+import java.util.Scanner;
+
+public class Simple_intrest {
+
+	public static void main(String[] args) {
+		//Total months
+		LocalDate nowDate = LocalDate.now();
+		LocalDate pastDate = LocalDate.of(2017, 12, 12);
+		System.out.println("Total Time till now is :-");
+		System.out.println(ChronoUnit.MONTHS.between(pastDate, nowDate) + "Months");
+		System.out.println(Period.between(pastDate, nowDate).getDays() + "Days");
+		
+		//simple intrest 
+		//Scanner ss = new Scanner(System.in);
+		System.out.println("Your Principle amount is 1000 & Rate is 5 %");
+		System.out.println("Then Your total intrest is :");
+		int p = 1000;
+		int r = 5;
+		long t1 = ChronoUnit.MONTHS.between(pastDate, nowDate);
+		long t2 = Period.between(pastDate, nowDate).getDays()/30;
+		long T = t1 + t2;
+		float si = (p*r*T)/100;
+		System.out.println(si);
+	}
+
+}
